@@ -12,6 +12,7 @@ import java.util.List;
 @Controller
 public class PokemonTypeController {
 
+    @Autowired
     PokemonTypeService pokemonTypeService;
 
     @GetMapping("/pokedex")
