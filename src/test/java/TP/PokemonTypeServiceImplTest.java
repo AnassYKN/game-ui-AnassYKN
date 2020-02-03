@@ -14,7 +14,7 @@ import static org.mockito.Mockito.*;
 public class PokemonTypeServiceImplTest {
     @Test
     void listPokemonsTypes_shouldCallTheRemoteService() {
-        var url = "https://pokemon-type-api-anassykn.herokuapp.com/";
+        var url = "https://pokemon-type-api-anassykn.herokuapp.com";
 
         var restTemplate = mock(RestTemplate.class);
         var pokemonServiceImpl = new PokemonTypeServiceImpl();
