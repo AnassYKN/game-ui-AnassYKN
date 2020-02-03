@@ -93,5 +93,7 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-jcl:5.2.3.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-test:5.2.3.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.xmlunit:xmlunit-core:2.6.3" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-mustache:2.2.4.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: com.samskivert:jmustache:1.15" level="project" />
   </component>
 </module>
