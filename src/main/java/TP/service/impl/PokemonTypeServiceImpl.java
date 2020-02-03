@@ -3,6 +3,7 @@ package TP.service.impl;
 import TP.bo.PokemonType;
 import TP.service.PokemonTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -25,6 +26,7 @@ public class PokemonTypeServiceImpl implements PokemonTypeService {
         this.restTemplate=restTemplate;
     }
 
+    @Value("${pokemonType.service.url}")
     public void setPokemonTypeServiceUrl(String pokemonServiceUrl) {
         restTemplate.getForObject(pokemonServiceUrl,String.class);
     }

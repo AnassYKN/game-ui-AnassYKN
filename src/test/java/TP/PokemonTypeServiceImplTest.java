@@ -4,6 +4,7 @@ import TP.bo.PokemonType;
 import TP.service.impl.PokemonTypeServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -44,5 +45,12 @@ public class PokemonTypeServiceImplTest {
     void setRestTemplate_shouldBeAnnotatedWithAutowired() throws NoSuchMethodException {
         var setRestTemplateMethod = PokemonTypeServiceImpl.class.getDeclaredMethod("setRestTemplate", RestTemplate.class);
         assertNotNull(setRestTemplateMethod.getAnnotation(Autowired.class));
+    }
+    @Test
+    void setPokemonServiceUrl_shouldBeAnnotatedWithValue() throws NoSuchMethodException {
+        var setter = PokemonTypeServiceImpl.class.getDeclaredMethod("setPokemonTypeServiceUrl", String.class);
+        var valueAnnotation = setter.getAnnotation(Value.class);
+        assertNotNull(valueAnnotation);
+        assertEquals("${pokemonType.service.url}", valueAnnotation.value());
     }
 }
