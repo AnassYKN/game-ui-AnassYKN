@@ -1,5 +1,4 @@
 package TP.service.impl;
-import TP.bo.Pokemon;
 import TP.bo.PokemonType;
 import TP.bo.Trainer;
 import TP.service.PokemonTypeService;
