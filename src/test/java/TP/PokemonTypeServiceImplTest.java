@@ -1,7 +1,9 @@
 package TP;
 
 import TP.bo.PokemonType;
+import TP.bo.Trainer;
 import TP.service.impl.PokemonTypeServiceImpl;
+import TP.service.impl.TrainerServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -23,7 +25,7 @@ public class PokemonTypeServiceImplTest {
 
         var pikachu = new PokemonType();
         pikachu.setName("pikachu");
-        pikachu.setId(25);
+        pikachu.setPokemonTypeId(25);
 
         var expectedUrl = "https://pokemon-type-api-anassykn.herokuapp.com/pokemon-types/";
         when(restTemplate.getForObject(expectedUrl, PokemonType[].class)).thenReturn(new PokemonType[]{pikachu});
@@ -34,6 +36,29 @@ public class PokemonTypeServiceImplTest {
         assertEquals(1, pokemons.size());
 
         verify(restTemplate).getForObject(expectedUrl, PokemonType[].class);
+    }
+
+    @Test
+    void listTrainerTypes_shouldCallTheRemoteService() {
+        var url = "https://trainer-api-anassykn.herokuapp.com";
+
+        var restTemplate = mock(RestTemplate.class);
+        var trainerServiceImpl = new TrainerServiceImpl();
+        trainerServiceImpl.setRestTemplate(restTemplate);
+        trainerServiceImpl.setTrainerServiceUrl(url);
+
+        var trainer = new Trainer();
+        trainer.setName("Anass");
+
+        var expectedUrl = "https://trainer-api-anassykn.herokuapp.com/trainers/";
+        when(restTemplate.getForObject(expectedUrl, Trainer[].class)).thenReturn(new Trainer[]{trainer});
+
+        var trainers = trainerServiceImpl.listTrainer();
+
+        assertNotNull(trainers);
+        assertEquals(1, trainers.size());
+
+        verify(restTemplate).getForObject(expectedUrl, Trainer[].class);
     }
 
     @Test

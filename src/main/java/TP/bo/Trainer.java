@@ -10,12 +10,9 @@ public class Trainer {
 
     private String password;
 
-    public Trainer() {
-    }
+    public Trainer() {}
 
-    public String getName() {
-        return name;
-    }
+    public String getName() { return name; }
 
     public void setName(String name) {
         this.name = name;

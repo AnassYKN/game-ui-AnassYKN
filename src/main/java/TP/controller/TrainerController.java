@@ -1,6 +1,4 @@
 package TP.controller;
-
-import TP.bo.PokemonType;
 import TP.bo.Trainer;
 import TP.service.TrainerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +15,7 @@ public class TrainerController {
     TrainerService TrainerService;
 
     @GetMapping("/trainers")
-    public ModelAndView pokedex(){
+    public ModelAndView trainers(){
         var model = new ModelAndView();
         model.setViewName("trainers");
         List<Trainer> trainerlist = this.TrainerService.listTrainer();

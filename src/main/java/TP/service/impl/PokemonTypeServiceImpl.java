@@ -12,8 +12,6 @@ import java.util.List;
 @Service
 public class PokemonTypeServiceImpl implements PokemonTypeService {
 
-
-
     private RestTemplate restTemplate;
     private String pokemonServiceUrl;
 
@@ -23,12 +21,19 @@ public class PokemonTypeServiceImpl implements PokemonTypeService {
         return List.of(listPokemon);
     }
 
+    @Override
+    public PokemonType getPokemonTypeByid(int id) {
+        PokemonType pokemonType = this.restTemplate.getForObject(pokemonServiceUrl+"/pokemon-types/"+id, PokemonType.class);
+        return pokemonType;
+    }
+
+
     @Autowired
     public void setRestTemplate(RestTemplate restTemplate) {
         this.restTemplate=restTemplate;
     }
 
-    @Value("${pokemonType.service.url}")
+    @Value("https://pokemon-type-api-anassykn.herokuapp.com")
     public void setPokemonTypeServiceUrl(String pokemonServiceUrl) {
         this.pokemonServiceUrl = pokemonServiceUrl;
     }

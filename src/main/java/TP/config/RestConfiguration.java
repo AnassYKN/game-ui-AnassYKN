@@ -1,6 +1,6 @@
 package TP.config;
 
-import org.springframework.beans.factory.annotation.Value;
+
 import org.springframework.context.annotation.*;
 import org.springframework.http.client.support.BasicAuthenticationInterceptor;
 import org.springframework.web.client.RestTemplate;
