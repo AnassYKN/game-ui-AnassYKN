@@ -54,7 +54,7 @@ public class TrainerServiceImpl implements TrainerService {
         this.restTemplate=restTemplate;
     }
 
-    @Value("http://localhost:8081")
+    @Value("https://trainer-api-anassykn.herokuapp.com")
     public void setTrainerServiceUrl(String TrainerUrl) {
         this.TrainerUrl = TrainerUrl;
     }
