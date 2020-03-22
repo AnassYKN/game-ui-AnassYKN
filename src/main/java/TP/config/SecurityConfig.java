@@ -23,13 +23,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return new BCryptPasswordEncoder();
     }
 
-
+    @Bean
     public UserDetailsService userDetailsService() {
         return username -> Optional.ofNullable(trainerService.getTrainer(username))
                 .map(trainer -> User.withUsername(trainer.getName()).password(trainer.getPassword()).roles("USER").build())
                 .orElseThrow(() -> new BadCredentialsException("No such user"));
     }
-
+    @Autowired
     public void setTrainerService(TrainerService trainerService) {
         this.trainerService=trainerService;
     }

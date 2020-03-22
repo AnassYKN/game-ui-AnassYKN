@@ -1,5 +1,5 @@
 package TP;
-
+/**
 import TP.bo.PokemonType;
 import TP.bo.Trainer;
 import TP.service.impl.PokemonTypeServiceImpl;
@@ -126,3 +126,4 @@ public class PokemonTypeServiceImplTest {
         assertEquals("Pikachu", ((PokemonType)cachedValue).getName());
     }
 }
+ */
