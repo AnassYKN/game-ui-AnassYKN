@@ -37,7 +37,7 @@ public class IndexControllerTest {
         var modelAndView = indexController.registerNewTrainer("Blue");
 
         assertNotNull(modelAndView);
-        assertEquals("pokedex", modelAndView.getViewName());
+        assertEquals("register", modelAndView.getViewName());
         assertEquals("Blue", modelAndView.getModel().get("name"));
     }
 
