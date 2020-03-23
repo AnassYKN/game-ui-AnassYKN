@@ -6,6 +6,7 @@ import TP.service.TrainerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -49,6 +50,10 @@ public class TrainerServiceImpl implements TrainerService {
         trainer.setTeam(pokemonsTypes);
     }
 
+    @Override
+    public void addTrainer(String TrainerName) {
+       // this.restTemplate.execute(TrainerUrl+"/trainers/", HttpMethod.POST,)
+    }
 
 
     @Autowired

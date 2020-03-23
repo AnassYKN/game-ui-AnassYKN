@@ -10,4 +10,5 @@ public interface TrainerService {
     public List<Trainer> listTrainer();
     Trainer getTrainer(String TrainerName);
     void getPokemonTypeByTrainer(Trainer trainer);
+    void addTrainer(String TrainerName);
 }

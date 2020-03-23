@@ -14,13 +14,6 @@ public class IndexControllerTest {
         assertNotNull(IndexController.class.getAnnotation(Controller.class));
     }
 
-    @Test
-    void index_shouldReturnTheNameOfTheIndexTemplate() {
-        var indexController = new IndexController();
-        var viewName = indexController.index();
-
-        assertEquals("index", viewName);
-    }
 
     @Test
     void index_shouldBeAnnotated() throws NoSuchMethodException {
@@ -31,15 +24,6 @@ public class IndexControllerTest {
         assertArrayEquals(new String[]{"/"}, getMapping.value());
     }
 
-    @Test
-    void registerNewTrainer_shouldReturnAModelAndView(){
-        var indexController = new IndexController();
-        var modelAndView = indexController.registerNewTrainer("Blue");
-
-        assertNotNull(modelAndView);
-        assertEquals("register", modelAndView.getViewName());
-        assertEquals("Blue", modelAndView.getModel().get("name"));
-    }
 
     @Test
     void registerNewTrainer_shouldBeAnnotated() throws NoSuchMethodException {

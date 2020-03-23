@@ -23,7 +23,7 @@ public class RestConfiguration {
     @Bean
     public RestTemplate trainerApiRestTemplate(){
         RestTemplate restTemplate = new RestTemplate();
-        restTemplate.getInterceptors().add(new BasicAuthenticationInterceptor(username,password));
+        restTemplate.getInterceptors().add(new BasicAuthenticationInterceptor("user","787f7228-60da-11ea-bc55-0242ac130003"));
         return restTemplate;
     }
 
