@@ -1,5 +1,5 @@
 package TP;
-/**
+
 import TP.bo.Trainer;
 import TP.config.SecurityConfig;
 import TP.service.TrainerService;
@@ -69,4 +69,4 @@ public class SecurityConfigTest {
     }
 }
 
- */
+

@@ -1,6 +1,7 @@
 package TP.config;
 
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.*;
 import org.springframework.http.client.support.BasicAuthenticationInterceptor;
 import org.springframework.web.client.RestTemplate;
@@ -8,8 +9,11 @@ import org.springframework.web.client.RestTemplate;
 @Configuration
 public class RestConfiguration {
 
-    private String username="user";
-    private String password="787f7228-60da-11ea-bc55-0242ac130003";
+    @Value("${spring.security.user.name}")
+    private String username;
+
+    @Value("${spring.security.user.password}")
+    private String password;
 
     @Bean
     public RestTemplate restTemplate(){

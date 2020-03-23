@@ -16,7 +16,7 @@ public class IndexController {
     @PostMapping("/registerTrainer")
     public ModelAndView registerNewTrainer(String trainerName) {
         var mav = new ModelAndView();
-        mav.setViewName("pokedex");
+        mav.setViewName("register");
         mav.addObject("name", trainerName);
         return mav;
     }
