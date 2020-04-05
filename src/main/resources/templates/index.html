@@ -1,0 +1,29 @@
+{{> layout/header}}
+<body>
+<div class="container">
+    <div class="row">
+        <img  src="/images/chen.png" class="col-md-2"/>
+
+        <div class="row col-md-10">
+
+            <blockquote class="blockquote">
+                Hello there!
+                Welcome to the world of Pokémon!
+                My name is Oak! People call me the Pokémon Prof!
+                This world is inhabited by creatures called Pokémon!
+                For some people, Pokémon are pets. Other use them for fights.
+                Myself… I study Pokémon as a profession. First, what is your name?
+            </blockquote>
+
+            <form action="/registerTrainer" method="post">
+                <div class="form-group">
+                    <label for="trainerName">Trainer name</label>
+                    <input type="text" class="form-control" id="trainerName" name="trainerName" aria-describedby="trainerHelp" placeholder="Enter your name">
+                    <small id="trainerHelp" class="form-text text-muted">This will be your name in the game !</small>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>

@@ -1,0 +1,33 @@
+{{> layout/header}}
+{{> layout/navbar}}
+
+<body>
+
+<div class="container">
+    <h1 class="pt-md-5 pb-md-5">Trainers</h1>
+
+    <div class="card-deck">
+        {{#Trainers}}
+        <div class="col-md-4">
+            <div class="card shadow-sm mb-4">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">{{name}} <!--2--><span class="badge badge-secondary"><!--3--></span></h4>
+                </div>
+
+                <div class="card-body">
+                    {{#team}}
+                    <img class="card-img-top" src="{{sprites.front_default}}" alt="Pokemon"/>
+                    <div><p>level :</p><span class="badge badge-secondary">{{level}} </span></div>
+                    {{/team}}
+                </div>
+
+
+            </div>
+        </div>
+        {{/Trainers}}
+    </div>
+
+</div>
+
+</body>
+</html>
